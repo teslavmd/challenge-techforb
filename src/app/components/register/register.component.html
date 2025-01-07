@@ -1,1 +1,67 @@
-<p>register works!</p>
+<link rel="stylesheet" href="../login/login.component.css">
+<main class="content">
+    <img class="image" src="../../../assets/images/image.png" alt="hero-image">
+    <section class="left">
+        <div class="login-info">
+            <h1 class="title">Registrarse</h1>
+            <p class="greeting"></p>
+            <div class="info">
+                <img src="../../../assets/icons/Icon.svg" alt="" class="icon">
+                <div>
+                    <h3>Monitoreo integral</h3>
+                    <span>Administra, monitorea mutiples plantas de forma centralizada</span>
+                </div>
+            </div>
+            <div class="info">
+                <img src="../../../assets/icons/Icon2.svg" alt="" class="icon">
+                <div>
+                    <h3>Notificaciones en tiempo real</h3>
+                    <span>Recibi notificaciones en tiempo real sobre las mediciones</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO LOG IN -->
+    <section class="right">
+        <form class="form">
+            <h1 class="title">Portal de monitoreo</h1>
+            <h3 class="subtitle">Registrarse</h3>
+            <div class="form-inputs">        
+                <label class="input-container" for="email">
+                    <input 
+                    type="email" 
+                    id="email" 
+                    name="email" class="form-input"
+                    placeholder=" " required>
+                    <span class="form-text">Email</span>
+                </label>
+                
+                <label class="input-container" for="password">
+                    <input 
+                    type="password" 
+                    id="password" 
+                    name="password" class="form-input"
+                    placeholder=" " required>
+                    <span class="form-text">Contraseña </span>
+                    <!-- <img class="icon-pw" src="../../../assets/icons/shape_pw.svg" alt="show-pw"> -->
+                </label>
+
+                <label class="input-container" for="confirm-password">
+                    <input 
+                    type="password" 
+                    id="confirm-password" 
+                    name="confirm-password" class="form-input"
+                    placeholder=" " required>
+                    <span class="form-text">Confirmar contraseña </span>
+                    <!-- <img class="icon-pw" src="../../../assets/icons/shape_pw.svg" alt="show-pw"> -->
+                </label>
+            </div>
+            <div class="form-btn">
+                <a routerLink="/login" class="forgot-password">¿Ya tienes una cuenta?</a>
+                <button class="btn">Registrarse</button>
+            </div>
+        </form>
+    </section>
+</main>
+
