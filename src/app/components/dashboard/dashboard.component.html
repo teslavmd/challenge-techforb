@@ -23,7 +23,7 @@
                 <p>Matías Villafañe</p>
             </div>
         </header>
-        
+        <!-- USAR CON DIRECTIVAS EN LA IMPLEMENTACION CON API -->
         <section class="cards">
             <div class="card">
                 <div class="card-content">
@@ -31,7 +31,7 @@
                     <h3 class="card-value">{{1234 | number}}</h3>
                 </div>
                 <div class="card-icon">
-                    <img src="../../../assets/icons/" alt="">
+                    <img src="../../../assets/icons/CardIcons/lecturas_ok.svg" alt="">
                 </div>
             </div>
             <div class="card">
@@ -40,7 +40,7 @@
                     <h3 class="card-value">932</h3>
                 </div>
                 <div class="card-icon">
-                    <img src="../../../assets/icons/" alt="">
+                    <img src="../../../assets/icons/CardIcons/aler_med.svg" alt="">
                 </div>
             </div>
             <div class="card">
@@ -49,7 +49,7 @@
                     <h3 class="card-value">932</h3>
                 </div>
                 <div class="card-icon">
-                    <img src="../../../assets/icons/" alt="">
+                    <img src="../../../assets/icons/CardIcons/aler_rojas.svg" alt="">
                 </div>
             </div>
             <div class="card">
@@ -58,15 +58,116 @@
                     <h3 class="card-value">932</h3>
                 </div>
                 <div class="card-icon">
-                    <img src="../../../assets/icons/" alt="">
+                    <img src="../../../assets/icons/CardIcons/sens_desh.svg" alt="">
                 </div>
             </div>
         </section>
-        <section class="plant">
-            
+        <section class="plants">
+            <div class="add-plant">
+                <h3 class="plant-title">Plantas</h3>
+                <button class="button-add">+ Crear nueva planta</button>
+            </div>
+            <table class="table-plants">
+                    <tr>
+                      <th>País</th>
+                      <th>Nombre de la planta</th>
+                      <th>Lecturas</th>
+                      <th>Alertas medias</th>
+                      <th>Alertas rojas</th>
+                      <th>Acciones</th>
+                    </tr>
+                    <tr>
+                        <td>Argentina</td>
+                        <td>Planta 1</td>
+                        <td>1234</td>
+                        <td>1234</td>
+                        <td>1234</td>
+                        <td><img class="button-edit" src="../../../assets/icons/PlantsIcons/more-actions.svg"/></td>
+                    </tr>
+                    <tr>
+                        <td>Argentina</td>
+                        <td>Planta 1</td>
+                        <td>1234</td>
+                        <td>1234</td>
+                        <td>1234</td>
+                        <td><img class="button-edit" src="../../../assets/icons/PlantsIcons/more-actions.svg"/></td>
+                    </tr>
+                    
+            </table>
         </section>
         <section class="cards-stats">
-            
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-name">Lecturas OK</span>
+                    <h3 class="card-value">{{1234 | number}}</h3>
+                </div>
+                <div class="card-icon">
+                    <img src="../../../assets/icons/CardIcons/lecturas_ok.svg" alt="">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-name">Alertas medias</span>
+                    <h3 class="card-value">932</h3>
+                </div>
+                <div class="card-icon">
+                    <img src="../../../assets/icons/CardIcons/aler_med.svg" alt="">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-name">Alertas rojas</span>
+                    <h3 class="card-value">932</h3>
+                </div>
+                <div class="card-icon">
+                    <img src="../../../assets/icons/CardIcons/aler_rojas.svg" alt="">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-name">Sensores deshabilitados</span>
+                    <h3 class="card-value">932</h3>
+                </div>
+                <div class="card-icon">
+                    <img src="../../../assets/icons/CardIcons/sens_desh.svg" alt="">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-name">Lecturas OK</span>
+                    <h3 class="card-value">{{1234 | number}}</h3>
+                </div>
+                <div class="card-icon">
+                    <img src="../../../assets/icons/CardIcons/lecturas_ok.svg" alt="">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-name">Alertas medias</span>
+                    <h3 class="card-value">932</h3>
+                </div>
+                <div class="card-icon">
+                    <img src="../../../assets/icons/CardIcons/aler_med.svg" alt="">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-name">Alertas rojas</span>
+                    <h3 class="card-value">932</h3>
+                </div>
+                <div class="card-icon">
+                    <img src="../../../assets/icons/CardIcons/aler_rojas.svg" alt="">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-name">Sensores deshabilitados</span>
+                    <h3 class="card-value">932</h3>
+                </div>
+                <div class="card-icon">
+                    <img src="../../../assets/icons/CardIcons/sens_desh.svg" alt="">
+                </div>
+            </div>
         </section>
     </div>
 </div>
