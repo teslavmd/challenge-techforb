@@ -1,0 +1,19 @@
+<div class="form-container">
+    <h3>Crear nueva planta</h3>
+    <form class="form" action="">
+        <label for="plant-name" class="plant-input">
+            Nombre planta
+            <input type="text" class="plant-name" placeholder="Ingrese nombre">
+        </label>
+        <label for="plant-country" class="plant-input">
+            País
+            <select name="plant-country" id="plant-country" class="plant-name">
+                <option  *ngFor="let country of countries" [value]="country.name">{{ country.name }}</option>
+            </select>
+        </label>
+        <div class="buttons">
+            <button class="btn cancel">Cancelar</button>
+            <button class="btn create">Crear</button>
+        </div>
+    </form>
+</div>

@@ -4,7 +4,7 @@
     <section class="left">
         <div class="login-info">
             <h1 class="title">Registrarse</h1>
-            <p class="greeting">Crea una cuenta para acceder a todas las funcionalidades del portal de monitoreo.</p>
+            <p class="greeting">¡Bienvenido! Estamos encantados de que quieras unirte a nuestra plataforma. Regístrate y comienza a disfrutar de todas las ventajas que ofrecemos. No pierdas la oportunidad de ser parte de nuestra comunidad.</p>
             <div class="info">
                 <img src="../../../assets/icons/LoginIcons/Icon.svg" alt="" class="icon">
                 <div>
@@ -23,42 +23,76 @@
     </section>
 
     <section class="right">
-        <form class="form">
+        <form class="form" [formGroup]="registerForm" (ngSubmit)="register()">
             <h1 class="title">Portal de monitoreo</h1>
             <h3 class="subtitle">Registrarse</h3>
-            <div class="form-inputs">        
+            <div class="form-inputs">
+                <label class="input-container" for="username">
+                    <input 
+                    autocomplete="off"
+                    type="text" 
+                    id="username" 
+                    formControlName="username" class="form-input"
+                    placeholder=" " required
+                    class="form-input"
+                    [ngClass]="{'error' : username.invalid && username.touched}"   
+                    >
+                    <span class="form-text">Usuario</span>
+                    <span class="error-input" [style.visibility]="username.invalid && username.touched ? 'visible' : 'hidden'">ingrese un nombre de usuario</span>
+                </label>
                 <label class="input-container" for="email">
                     <input 
+                    autocomplete="off"
                     type="email" 
                     id="email" 
-                    name="email" class="form-input"
+                    formControlName="email" class="form-input"
+                    [ngClass]="{'error' : email.invalid && email.touched}"
                     placeholder=" " required>
                     <span class="form-text">Email</span>
+                    <span class="error-input" [style.visibility]="email.invalid && email.touched ? 'visible' : 'hidden'">Ingrese un email valido</span>
                 </label>
                 
                 <label class="input-container" for="password">
                     <input 
+                    autocomplete="off"
                     type="password" 
                     id="password" 
-                    name="password" class="form-input"
+                    formControlName="password" class="form-input"
+                    [ngClass]="{'error' : password.invalid && password.touched}"
                     placeholder=" " required>
                     <span class="form-text">Contraseña </span>
+                    <span class="error-input" [style.visibility]="password.invalid && password.touched ? 'visible' : 'hidden'">No cumple los requisitos</span>
                     <!-- <img class="icon-pw" src="../../../assets/icons/shape_pw.svg" alt="show-pw"> -->
                 </label>
 
                 <label class="input-container" for="confirm-password">
                     <input 
+                    autocomplete="off"
                     type="password" 
                     id="confirm-password" 
-                    name="confirm-password" class="form-input"
+                    formControlName="confirmPassword" class="form-input"
+                    [ngClass]="{'error' : confirmPassword.invalid && confirmPassword.touched}"
                     placeholder=" " required>
                     <span class="form-text">Confirmar contraseña </span>
+                    <span class="error-input" [style.visibility]="isDifferent() && confirmPassword.touched ? 'visible' : 'hidden'">Las contraseñas deben coincidir</span>
                     <!-- <img class="icon-pw" src="../../../assets/icons/shape_pw.svg" alt="show-pw"> -->
                 </label>
             </div>
+            <span class="error-request" *ngIf="hasError">{{ alertError }}</span>
+            <span class="successfully-request" *ngIf="accountSucceed">Cuenta creada exitosamente</span>
             <div class="form-btn">
-                <a routerLink="/login" class="forgot-password">¿Ya tienes una cuenta?</a>
-                <button class="btn">Registrarse</button>
+                <div class="requiered-format" [ngClass]="{'error-pw' : password.invalid && password.touched}">
+                    <span>-Al menos 8 caracteres</span>
+                    <span>-Al menos 1 número</span>
+                    <span>-Al menos 1 caracter especial</span>
+                </div>
+                <button class="btn"  [disabled]="registerForm.invalid" type="submit">Registrarse</button>
+            </div>
+            <div class="terms-conditions">
+                <p>Protegido por reCAPTCHA y sujeta a la <a class="links" href="#">Politica de Privacidad</a> y <a class="links" href="">Condiciones</a></p>
+            </div>
+            <div class="already-login">
+                <p>¿Ya tienes una cuenta? <a class="links" routerLink="/login">Inicia sesión</a></p>
             </div>
         </form>
     </section>

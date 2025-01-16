@@ -23,32 +23,45 @@
 
     <!-- FORMULARIO LOG IN -->
     <section class="right">
-        <form class="form">
+        <form [formGroup]="loginForm" (submit)="login()" class="form">
             <h1 class="title">Portal de monitoreo</h1>
             <h3 class="subtitle">Iniciar sesión</h3>
             <div class="form-inputs">        
                 <label class="input-container" for="email">
                     <input 
+                    autocomplete="off"
                     type="email" 
                     id="email" 
-                    name="email" class="form-input"
+                    formControlName="email" class="form-input"
+                    [ngClass]="{'error' : email.invalid && email.touched}"
                     placeholder=" " required>
                     <span class="form-text">Email</span>
+                    <span class="error-input" [style.visibility]="email.invalid && email.touched ? 'visible' : 'hidden'">Ingrese un email valido</span>
                 </label>
                 
                 <label class="input-container" for="password">
                     <input 
-                    type="password" 
+                    autocomplete="off"
+                    type="password"
                     id="password" 
-                    name="password" class="form-input"
+                    formControlName="password" class="form-input"
+                    [ngClass]="{'error' : password.invalid && password.touched}"
                     placeholder=" " required>
                     <span class="form-text">Contraseña </span>
+                    <span class="error-input" [style.visibility]="password.invalid && password.touched ? 'visible' : 'hidden'">Ingrese la contraseña</span>
                     <!-- <img class="icon-pw" src="../../../assets/icons/shape_pw.svg" alt="show-pw"> -->
-                </label>
+                </label>   
             </div>
+            <span class="error-request" [style.visibility]="hasError ? 'visible' : 'hidden'">{{ alertError }}</span>
             <div class="form-btn">
                 <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
-                <button class="btn">Iniciar sesión</button>
+                <button class="btn" [disabled]="loginForm.invalid" type="submit">Iniciar sesión</button>
+            </div>
+            <div class="terms-conditions">
+                <p>Protegido por reCAPTCHA y sujeta a la <a class="links" href="#">Politica de Privacidad</a> y <a class="links" href="">Condiciones</a></p>
+            </div>
+            <div class="already-register">
+                <p>¿No tienes una cuenta? <a class="links" routerLink="/register">Registrarse</a></p>
             </div>
         </form>
     </section>

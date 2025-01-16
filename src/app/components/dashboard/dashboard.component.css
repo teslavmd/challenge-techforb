@@ -155,6 +155,10 @@ tr{
     grid-template-columns: repeat(6, 1fr);
 }
 
+td{
+    font-size: 12px;
+}
+
 td:last-child{
     cursor: pointer;
     width: 60px;
@@ -167,4 +171,23 @@ td:last-child{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
+}
+
+.card-detail{
+    display: flex;
+}
+
+.card-detail-icon{
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.card-detail-icon img{
+    margin-right: 5px;
+    width: 14px;
+}
+
+.card-detail-value{
+    font-size: 12px;
 }

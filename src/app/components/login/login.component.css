@@ -11,7 +11,7 @@
 
 .right{
     border-radius: 30px 0 0 30px;
-    background: #DCDBDD;
+    background: #FBFCFC;
     z-index: 20;
     display: flex;
     justify-content: center;
@@ -135,12 +135,13 @@
 
 .form-input:focus{
     border: solid 1px #33A3AA;
+    color: #84818A;
 }
 
 .form-input:focus + .form-text,
 .form-input:not(:placeholder-shown) + .form-text{
     transform: translateY(-50%) scale(.7);
-    background: #DCDBDD;
+    background: #FBFCFC;
     transition: .3s;
     color: #33A3AA;
 }
@@ -153,10 +154,11 @@
 
 .form-btn{
     display: flex;
-    margin-top: 20px;
+    margin: 30px 0;
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    font-size: 14px;
 }
 
 .btn{
@@ -174,4 +176,53 @@
 
 .btn:hover{
     background: #107076;
+}
+
+.terms-conditions{
+    font-size: 12px;
+    color: #84818A;
+}
+
+.links{
+    color: #33A3AA;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.links:hover{
+    text-decoration: underline;
+}
+
+.already-login, .already-register{
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+
+.error{
+    border : solid 1px #ff5e5e;
+    color: #ff5e5e;
+}
+
+.error-input{
+    font-size: 12px;
+    color: #ff5e5e;
+    padding-left: 10px;
+}
+
+.error-request{
+    padding: 5px 10px;
+    font-size: 15px;
+    background: #ffe3e3;
+    border-radius: 7px;
+    color: #ff1515;
+}
+
+
+.successfully-request{
+    padding: 5px 10px;
+    font-size: 15px;
+    border-radius: 7px;
+    background: #9fffb3;
+    color: #00b400;
 }
