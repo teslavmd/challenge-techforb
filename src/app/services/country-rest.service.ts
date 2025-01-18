@@ -14,8 +14,9 @@ export class CountryRestService {
 
   getCountries() : Country[] {
     this.http.get("https://restcountries.com/v3.1/all").subscribe((data : any) => {
+      // console.log(data);
       data.forEach((element : any) => {
-      this.countries.push(new Country(element.name.common, element.flags.svg));
+      this.countries.push(new Country(element.cca2, element.name.common, element.flags.svg));
       });
       this.countries.sort((a, b) => a.name.localeCompare(b.name));
     });

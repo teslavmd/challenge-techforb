@@ -1,2 +1,5 @@
 <router-outlet></router-outlet>
-<app-loader></app-loader>
+@if (isLoading()) {
+    <app-loader
+    ></app-loader>
+}

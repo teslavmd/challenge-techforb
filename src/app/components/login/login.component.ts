@@ -59,7 +59,7 @@ export class LoginComponent {
       },
       error : response => {
 
-        this.alertError = response.error.description || "error al iniciar sesion";
+        this.alertError = response.error.description || "Error al iniciar sesion";
         this.hasError = true;
         console.error(response);
       }

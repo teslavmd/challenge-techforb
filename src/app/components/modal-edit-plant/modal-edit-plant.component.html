@@ -1,40 +1,44 @@
 <div class="form-container">
-    <h3>Editar planta</h3>
-    <form class="form" action="">
+    @if(isLoadingEdit()){
+        <app-loader></app-loader>
+    }@else {
+        <h3>Editar planta</h3>
+        <form class="form" [formGroup]="editForm" (submit)="editPlant()">
         <div class="grid">
             <label for="plant-name" class=" align-input">
                 Nombre planta
-                <input type="text" readonly class="edit-input">
+                <input type="text"  readonly class="edit-input" [value]="plantSelected.plantName">
             </label>
             <label for="plant-country" class="align-input">
                 País
-                <input type="text" readonly class="edit-input">
+                <input type="text" readonly class="edit-input"  [value]="plantSelected.country">
             </label>
             
-            <label for="plant-country" class="align-input">
+            <label for="readingOkOnlyRead" class="align-input">
                 Cantidad de lecturas
-                <input type="text" class="edit-input"   placeholder="Ingrese">
+                <input type="text" readonly id="readingOkOnlyRead" class="edit-input" formControlName="readingsOk"  placeholder="Ingrese">
             </label>
-
-            <label for="numbReading" class="align-input">
+            
+            <label for="readingsOk" class="align-input">
                 Cantidad de lecturas
-                <input type="text" class="edit-input" id="numbReading" name="numbReading" placeholder="Ingrese">
+                <input type="number" class="edit-input" id="readingsOk" formControlName="readingsOk"  placeholder="Ingrese">
             </label>
-
-            <label for="average" class="align-input">
+            
+            <label for="mediumAlerts" class="align-input">
                 Alertas medias
-                <input type="text" class="edit-input" id="average" name="average" placeholder="Ingrese">
+                <input type="number" class="edit-input" id="mediumAlerts" formControlName="mediumAlerts" placeholder="Ingrese">
             </label>
-
-            <label for="warning" class="align-input">
+            
+            <label for="redAlerts" class="align-input">
                 Alertas rojas
-                <input type="text" class="edit-input" id="warning" name="warning" placeholder="Ingrese">
+                <input type="number" class="edit-input" id="redAlerts"  formControlName="redAlerts" placeholder="Ingrese">
             </label>
-        
+            
         </div>
         <div class="buttons">
-            <button class="btn cancel">Cancelar</button>
-            <button class="btn edit">Editar</button>
+            <button class="btn cancel" type="reset" (click)="cancel()">Cancelar</button>
+            <button class="btn edit" [disabled]="editForm.invalid" type="submit" >Editar</button>
         </div>
     </form>
+    }
 </div>

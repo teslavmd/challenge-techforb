@@ -1,0 +1,12 @@
+<div class="confirm-delete">
+    @if (isDeleting()) {  
+        <app-loader></app-loader>
+    } @else {
+        <h3>Eliminar planta de : {{ plantSelected.plantName }}, {{ plantSelected.country }}</h3>
+        <div *ngIf="plantDeleted" class="plant-deleted" >Planta eliminada</div>
+        <div class="buttons">
+            <div class="btn cancel" (click)="cancel()" >Cancelar</div>
+            <div class="btn confirm" (click)="deletePlant()" >Confirmar</div>
+        </div>
+    }
+</div>

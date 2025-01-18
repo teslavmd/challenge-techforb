@@ -1,19 +1,25 @@
 <div class="form-container">
-    <h3>Crear nueva planta</h3>
-    <form class="form" action="">
-        <label for="plant-name" class="plant-input">
-            Nombre planta
-            <input type="text" class="plant-name" placeholder="Ingrese nombre">
-        </label>
-        <label for="plant-country" class="plant-input">
-            País
-            <select name="plant-country" id="plant-country" class="plant-name">
-                <option  *ngFor="let country of countries" [value]="country.name">{{ country.name }}</option>
-            </select>
-        </label>
-        <div class="buttons">
-            <button class="btn cancel">Cancelar</button>
-            <button class="btn create">Crear</button>
-        </div>
-    </form>
+    @if(isLoadingAdd()){
+        <app-loader></app-loader>
+    }
+    @else{
+        <h3>Crear nueva planta</h3>
+        <form class="form" [formGroup]="addForm" (submit)="addPlant()">
+            <label for="plant-name" class="plant-input">
+                Nombre planta
+                <input type="text" class="plant-name" placeholder="Ingrese nombre" formControlName="plantName">
+            </label>
+            <label for="plant-country" class="plant-input">
+                País
+                <select name="plant-country" id="plant-country" class="plant-name" formControlName="plantCountry">
+                    <option  *ngFor="let country of countries" [value]="country.code">{{ country.name }}</option>
+                </select>
+            </label>
+            <div *ngIf="plantAdded" class="plant-added" >Planta agregada</div>
+            <div class="buttons">
+                <button class="btn cancel" type="reset" (click)="back()">Cancelar</button>
+                <button class="btn create" [disabled]="addForm.invalid" type="submit" >Crear</button>
+            </div>
+        </form>
+    }
 </div>

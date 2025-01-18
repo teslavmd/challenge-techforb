@@ -1,5 +1,19 @@
-@if (isLoading()) {
-    <div class="loader-container">
-        <div class="loader"></div>
-    </div>
-}
+<div *ngIf="isLoadingAuth()" class="loader-auth container">
+    <div class="loader"></div>
+</div>
+
+<div *ngIf="isLoadingTable()" class="loader-table container">
+    <div class="loader-2"></div>
+</div>
+
+<div *ngIf="isLoadingDelete()" class="loader-delete container">
+    <div class="loader-2"></div>
+</div>
+
+<div *ngIf="isLoadingEdit()" class="loader-edit container">
+    <div class="loader-2"></div>
+</div>
+
+<div *ngIf="isLoadingAdd()" class="loader-add container">
+    <div class="loader-2"></div>
+</div>

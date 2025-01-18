@@ -78,3 +78,13 @@ option{
     background-color: #2e8f96;
 }
 
+.plant-added{
+    width: 100%;
+    padding: 3px 10px;
+    font-size: 12px;
+    border-radius: 7px;
+    background: #9fffb3;
+    color: #00b400;
+    text-align: center;
+    margin-bottom: 5px;
+}

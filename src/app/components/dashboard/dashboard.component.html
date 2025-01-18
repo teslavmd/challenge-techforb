@@ -39,33 +39,39 @@
                 <h3 class="plant-title">Plantas</h3>
                 <button class="button-add" (click)="addPlant()" >+ Crear nueva planta</button>
             </div>
+            
             <table class="table-plants">
-                    <tr>
-                      <th>País</th>
-                      <th>Nombre de la planta</th>
-                      <th>Lecturas</th>
-                      <th>Alertas medias</th>
-                      <th>Alertas rojas</th>
-                      <th>Acciones</th>
-                    </tr>
-                    <tr>
-                        <td>Argentina</td>
-                        <td>Planta 1</td>
-                        <td>1234</td>
-                        <td>1234</td>
-                        <td>1234</td>
-                        <td><img class="button-edit" src="../../../assets/icons/PlantsIcons/more-actions.svg"/></td>
-                    </tr>
-                    <tr>
-                        <td>Argentina</td>
-                        <td>Planta 1</td>
-                        <td>1234</td>
-                        <td>1234</td>
-                        <td>1234</td>
-                        <td (click)="editPlant(1)" ><img class="button-edit" src="../../../assets/icons/PlantsIcons/more-actions.svg"/></td>
-                    </tr>
+                <tr>
+                    <th>País</th>
+                    <th>Nombre de la planta</th>
+                    <th>Lecturas</th>
+                    <th>Alertas medias</th>
+                    <th>Alertas rojas</th>
+                    <th>Acciones</th>
+                </tr>
+                <div class="table-scroll">
+                    @if(isLoadingTable()){   
+                        <app-loader></app-loader>
+                    }@else { 
+                        <tr *ngFor="let plant of listPlants; let i = index">
+                            <td><img class="flag" src="{{ plant.imgFlag }}" alt="{{plant.country}}">  {{ plant.country }}</td>
+                            <td>{{ plant.plantName }}</td>
+                            <td>{{ plant.readingsOk }}</td>
+                            <td>{{ plant.mediumAlerts }}</td>
+                            <td>{{ plant.redAlerts }}</td>
+                            <td (click)="showOptions(i)">
+                                <img class="button-edit" *ngIf="!(optionIndex === i)" src="../../../assets/icons/PlantsIcons/more-actions.svg"/>
+                                <div class="options" *ngIf="(optionIndex === i)">
+                                    <span class="delete" (click)="deletePlant(plant)" >eliminar </span>
+                                    <span class="edit" (click)="editPlant(plant)">editar</span>
+                                    <span> x</span>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </div>
                     
-            </table>
+                </table>
         </section>
         <section class="cards-stats">
             <div *ngFor="let card of cardStats" class="card">

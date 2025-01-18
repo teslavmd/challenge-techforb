@@ -10,10 +10,10 @@ export class CardsStatsService {
   
   getCardsTotalStats(){
     return [
-      {name : 'Lecturas OK', value : 1234, icon : 'lecturas_ok.svg'},
-      {name : 'Alertas medias', value : 196, icon : 'aler_med.svg'},
-      {name : 'Alertas rojas', value : 12, icon : 'aler_rojas.svg'},
-      {name : 'Sensores deshabilitados', value : 4, icon : 'sens_desh.svg'}
+      {name : 'Lecturas OK', value : 0, icon : 'lecturas_ok.svg'},
+      {name : 'Alertas medias', value : 0, icon : 'aler_med.svg'},
+      {name : 'Alertas rojas', value : 0, icon : 'aler_rojas.svg'},
+      {name : 'Sensores deshabilitados', value : 0, icon : 'sens_desh.svg'}
     ]
   }
 
