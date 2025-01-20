@@ -1,4 +1,4 @@
 export const environment = {
     production : false,
-    apiUrl : 'http://localhost:8080'
+    apiUrl : 'https://short-enrika-teslavmd-1e5baed5.koyeb.app'
 }
